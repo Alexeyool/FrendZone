@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">FrendZone</string>
 
+    <!-- Facebook app ID -->
+    <string name="facebook_app_id">264400047299177</string>
+
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password (optional)</string>
@@ -13,7 +16,13 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
-
-    <!-- Facebook app ID -->
-    <string name="facebook_app_id">264400047299177</string>
+    <string name="connect_with_facebook">Connect with Facebook</string>
+    <string name="de_authorize_app">De authorize</string>
+    <string name="permissions">Permissions</string>
+    <string name="app_not_logged_in">App not logged in</string>
+    <string name="failed">Failed</string>
+    <string name="success">Success</string>
+    <string name="cancel">Cancel</string>
+    <string name="error">Error</string>
+    <string name="welcome">Welcome</string>
 </resources>
