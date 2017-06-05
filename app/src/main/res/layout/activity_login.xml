@@ -19,78 +19,131 @@
     */
 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+
+    xmlns:facebook="http://schemas.android.com/apk/res-auto"
+
     android:layout_width="match_parent"
+
     android:layout_height="match_parent"
-    android:gravity="center_horizontal"
+
     android:orientation="vertical"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.frendzone.alexeyool.LoginActivity">
 
-    <!-- Login progress -->
-    <ProgressBar
-        android:id="@+id/login_progress"
-        style="?android:attr/progressBarStyleLarge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:visibility="gone" />
+    android:gravity="center">
 
-    <ScrollView
-        android:id="@+id/login_form"
+
+
+    <LinearLayout
+
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
-        <LinearLayout
-            android:id="@+id/email_login_form"
-            android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="horizontal"
+
+        android:gravity="center">
+
+
+
+        <com.facebook.login.widget.ProfilePictureView
+
+            android:id="@+id/user_pic"
+
+            android:layout_width="wrap_content"
+
             android:layout_height="wrap_content"
-            android:orientation="vertical">
 
-            <com.facebook.login.widget.LoginButton
-                android:id="@+id/AL_button_facebook_login"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/connect_with_facebook" />
+            android:layout_marginLeft="10dp"
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
+            android:layout_marginStart="10dp"
 
-                <Button
-                    android:id="@+id/AL_button_deauth"
-                    android:layout_width="182dip"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="5dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_weight="1"
-                    android:text="@string/de_authorize_app"
-                    android:textSize="12sp" />
+            android:layout_marginRight="10dp"
 
-                <Button
-                    android:id="@+id/AL_button_permissions"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginStart="5dp"
-                    android:layout_weight="1"
-                    android:text="@string/permissions"
-                    android:textSize="12sp" />
+            android:layout_marginEnd="10dp"
 
-            </LinearLayout>
+            facebook:com_facebook_preset_size="small" />
 
-            <TextView
-                android:id="@+id/AL_textview_login"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:textSize="16sp" />
 
-        </LinearLayout>
-    </ScrollView>
+
+        <TextView
+
+            android:id="@+id/user_name"
+
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+
+            android:text="@string/welcome" />
+
+
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+
+        android:orientation="horizontal"
+
+        android:gravity="center"
+
+        android:layout_margin="10dp">
+
+
+
+        <Button
+
+            android:id="@+id/deauth"
+
+            android:layout_width="182dip"
+
+            android:layout_height="wrap_content"
+
+            android:text="@string/de_authorize_app"
+
+            android:layout_marginRight="5dp"
+
+            android:layout_marginEnd="5dp"
+
+            android:textSize="12sp" />
+
+
+
+        <Button
+
+            android:id="@+id/perms"
+
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+
+            android:text="@string/permissions"
+
+            android:layout_marginLeft="5dp"
+
+            android:layout_marginStart="5dp"
+
+            android:textSize="12sp" />
+
+
+
+    </LinearLayout>
+
+
+
+    <com.facebook.login.widget.LoginButton
+
+        android:id="@+id/_fb_login"
+
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+
+        android:layout_gravity="center_horizontal" />
+
+
+
 </LinearLayout>
