@@ -42,7 +42,6 @@ import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 import com.facebook.login.widget.ProfilePictureView;
-
 import org.json.JSONException;
 
 
@@ -59,7 +58,7 @@ public class LoginActivity extends AppCompatActivity {
     private TextView userNameView;
     private LoginButton fbLoginButton;
 
-
+    static Profile profile;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -71,6 +70,8 @@ public class LoginActivity extends AppCompatActivity {
         fbLoginButton = (LoginButton) findViewById(R.id._fb_login);
         profilePictureView = (ProfilePictureView) findViewById(R.id.user_pic);
         profilePictureView.setCropped(true);
+
+        fbLoginButton.setReadPermissions("user_friends");
 
         userNameView = (TextView) findViewById(R.id.user_name);
 
@@ -118,6 +119,25 @@ public class LoginActivity extends AppCompatActivity {
                 Intent selectPermsIntent =
                         new Intent(LoginActivity.this, PermissionSelectActivity.class);
                 startActivityForResult(selectPermsIntent, PICK_PERMS_REQUEST);
+            }
+        });
+
+        final Button goButton = (Button) findViewById(R.id.button_go);
+        goButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(profile != null && isLoggedIn()) {
+                    Intent listActivityIntent = new Intent(LoginActivity.this, ListActivity.class);
+                    startActivity(listActivityIntent);
+                }
+                else{
+                    Toast.makeText(
+                            LoginActivity.this,
+                            getResources().getString(
+                                    R.string.app_not_logged_in),
+                            Toast.LENGTH_LONG
+                    ).show();
+                }
             }
         });
 
@@ -172,7 +192,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void updateUI() {
-        Profile profile = Profile.getCurrentProfile();
+        profile = Profile.getCurrentProfile();
         if (profile != null) {
             profilePictureView.setProfileId(profile.getId());
             userNameView

@@ -41,7 +41,17 @@
     <string name="cancel">CANCEL</string>
 
     <string name="error">ERROR</string>
-
+    <string name="name">Name</string>
+    <string name="counry">Counry</string>
+    <string name="sex">Sex</string>
+    <string name="age">Age</string>
+    <string name="empty" />
+    <string name="friends">Friends</string>
+    <string name="friends_obchih">Frends obchih</string>
+    <string name="comments">Comments</string>
+    <string name="reposts">Reposts</string>
+    <string name="likes">Likes</string>
+    <string name="go">Go!</string>
 
 
     <string-array name="perms_array">
@@ -99,7 +109,6 @@
         <item>user_work_history</item>
 
 
-
         // Other Permissions
 
         <item>manage_notifications</item>
@@ -113,7 +122,6 @@
         <item>read_stream</item>
 
         <item>read_audience_network_insights</item>
-
 
 
         // Privacy
